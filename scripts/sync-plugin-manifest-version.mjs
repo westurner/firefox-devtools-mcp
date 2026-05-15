@@ -19,17 +19,23 @@ function readJson(filePath) {
 
 const packageJson = readJson(packageJsonPath);
 const pluginManifest = readJson(pluginManifestPath);
+const version = packageJson.version;
 
-if (pluginManifest.version === packageJson.version) {
+if (typeof version !== 'string' || version.trim() === '') {
+  console.error(`Invalid package.json version: ${version}`);
+  process.exit(1);
+}
+
+if (pluginManifest.version === version) {
   console.log(`Plugin manifest version already synced: ${pluginManifest.version}`);
   process.exit(0);
 }
 
-pluginManifest.version = packageJson.version;
+pluginManifest.version = version;
 try {
   writeFileSync(pluginManifestPath, JSON.stringify(pluginManifest, null, 2) + '\n');
 } catch (error) {
   console.error(`Failed to write plugin manifest at ${pluginManifestPath}: ${error.message}`);
   process.exit(1);
 }
-console.log(`Synced plugin manifest version to ${packageJson.version}`);
+console.log(`Synced plugin manifest version to ${version}`);
