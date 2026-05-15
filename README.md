@@ -28,12 +28,6 @@ See [SECURITY.md](SECURITY.md) for a full breakdown of risks and how to report v
 - Node.js ≥ 20.19.0
 - Firefox 100+ installed (auto‑detected, or pass `--firefox-path`)
 
-## Install with VS Code Copilot (plugin source URL)
-
-In VS Code, run **Chat: Install plugin from source** and paste:
-
-`https://github.com/mozilla/firefox-devtools-mcp`
-
 ## Install and use with Claude Code (npx)
 
 Recommended: use npx so you always run the latest published version from npm.
@@ -84,6 +78,12 @@ Option C — Helper script (local dev build)
 npm run setup
 # Choose Claude Code; the script saves JSON to the right path
 ```
+
+## Install with VS Code Copilot (plugin source URL)
+
+In VS Code, run **Chat: Install plugin from source** and paste:
+
+`https://github.com/mozilla/firefox-devtools-mcp`
 
 ## Try it with MCP Inspector
 
