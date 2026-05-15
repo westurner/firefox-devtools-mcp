@@ -32,7 +32,7 @@ See [SECURITY.md](SECURITY.md) for a full breakdown of risks and how to report v
 
 In VS Code, run **Chat: Install plugin from source** and paste:
 
-`https://github.com/mozilla/firefox-devtools-mcp/blob/main/.github/plugin/plugin.json`
+`https://github.com/mozilla/firefox-devtools-mcp`
 
 ## Install and use with Claude Code (npx)
 
