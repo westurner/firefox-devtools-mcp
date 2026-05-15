@@ -1,0 +1,13 @@
+{
+  "name": "firefox-devtools-mcp",
+  "version": "0.9.3",
+  "description": "Model Context Protocol (MCP) server for Firefox DevTools automation",
+  "mcpServers": {
+    "firefox-devtools": {
+      "command": "npx",
+      "args": [
+        "@mozilla/firefox-devtools-mcp@latest"
+      ]
+    }
+  }
+}
