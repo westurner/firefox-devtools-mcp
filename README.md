@@ -85,8 +85,8 @@ Use any of these command flows in VS Code, then paste:
 `https://github.com/mozilla/firefox-devtools-mcp`
 
 - Press `F1`, type `Chat: Install Plugin from Source`, then paste the URL.
-- Press `Ctrl-Shift-P`, type `Chat: Install Plugin from Source`, then paste the URL.
-- Press `Ctrl-P`, type `> `, type `Chat: Install Plugin from Source`, then paste the URL.
+- Press `Ctrl-Shift-P` (`Cmd-Shift-P` on macOS), type `Chat: Install Plugin from Source`, then paste the URL.
+- Press `Ctrl-P` (`Cmd-P` on macOS), type `> `, type `Chat: Install Plugin from Source`, then paste the URL.
 
 ## Try it with MCP Inspector
 
