@@ -8,8 +8,17 @@ const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const packageJsonPath = resolve(root, 'package.json');
 const pluginManifestPath = resolve(root, '.github', 'plugin', 'plugin.json');
 
-const packageJson = JSON.parse(readFileSync(packageJsonPath, 'utf8'));
-const pluginManifest = JSON.parse(readFileSync(pluginManifestPath, 'utf8'));
+function readJson(filePath) {
+  try {
+    return JSON.parse(readFileSync(filePath, 'utf8'));
+  } catch (error) {
+    console.error(`Failed to read or parse JSON at ${filePath}: ${error.message}`);
+    process.exit(1);
+  }
+}
+
+const packageJson = readJson(packageJsonPath);
+const pluginManifest = readJson(pluginManifestPath);
 
 if (pluginManifest.version === packageJson.version) {
   console.log(`Plugin manifest version already synced: ${pluginManifest.version}`);
@@ -17,5 +26,10 @@ if (pluginManifest.version === packageJson.version) {
 }
 
 pluginManifest.version = packageJson.version;
-writeFileSync(pluginManifestPath, JSON.stringify(pluginManifest, null, 2) + '\n');
+try {
+  writeFileSync(pluginManifestPath, JSON.stringify(pluginManifest, null, 2) + '\n');
+} catch (error) {
+  console.error(`Failed to write plugin manifest at ${pluginManifestPath}: ${error.message}`);
+  process.exit(1);
+}
 console.log(`Synced plugin manifest version to ${packageJson.version}`);
