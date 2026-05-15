@@ -81,9 +81,12 @@ npm run setup
 
 ## Install with VS Code Copilot (plugin source URL)
 
-In VS Code, run **Chat: Install plugin from source** and paste:
-
+Use any of these command flows in VS Code, then paste:
 `https://github.com/mozilla/firefox-devtools-mcp`
+
+- Press `F1`, type `Chat: Install Plugin from Source`, then paste the URL.
+- Press `Ctrl-Shift-P`, type `Chat: Install Plugin from Source`, then paste the URL.
+- Press `Ctrl-P`, type `> `, type `Chat: Install Plugin from Source`, then paste the URL.
 
 ## Try it with MCP Inspector
 
